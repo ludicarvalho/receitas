@@ -53,7 +53,7 @@ $alt = "16"; // Altura da imagem
 <!--  Aqui começa a página -->
 <div class="jumbotron">
   <div class="container">
-    <h1>Receitas Juliane</h1>
+    <h1>Receitas Caseiras</h1>
   </div>
 </div>
 <div class="container">
