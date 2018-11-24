@@ -12,15 +12,15 @@
 	}
 
 if ( !empty($_POST)) {
-        $tituloErro = null;
-        $ingredientesErro = null;
-        $modopreparoErro = null;
+	$tituloErro = null;
+	$ingredientesErro = null;
+	$modopreparoErro = null;
 
-        $titulo = $_POST['titulo'];
-        $ingredientes = trim($_POST['igrd']);
-        $modopreparo = trim($_POST['modopreparo']);
+	$titulo = $_POST['titulo'];
+	$ingredientes = trim($_POST['igrd']);
+	$modopreparo = trim($_POST['modopreparo']);
 
-		//Validação
+	//Validação
 	$validacao = true;
 	if (empty($titulo)) {
 		$tituloErro = 'Por favor, digite o nome da Receita!';
