@@ -43,9 +43,9 @@ $alt = "16"; // Altura da imagem
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="criar.php" title="Adicionar nova receita">Cadastrar</a>
 					<div class="dropdown-divider"></div><!-- Divisor de links no menu -->
-					<a class="dropdown-item" href="../../index.php" title="Sistema Casa Pessoal">Sistema</a>
-					<a class="dropdown-item" href="../agenda/index.php" title="Contatos">Agenda</a>
-					<a class="dropdown-item" href="../">Testes</a>
+					<a class="dropdown-item" href="#">Teste 01</a>
+					<a class="dropdown-item" href="#">Teste 02</a>
+					<a class="dropdown-item" href="#">Teste 03</a>
 				</div>
 			</li>
 		</ul>
@@ -56,7 +56,7 @@ $alt = "16"; // Altura da imagem
 <!--  Aqui começa a página -->
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
-		<h1>Receitas Juliane</h1>
+		<h1>Receitas Caseiras</h1>
 	</div>
 </div>
 
