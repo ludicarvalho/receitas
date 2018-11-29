@@ -55,8 +55,8 @@
 			$q->execute(array($id));
 			$data = $q->fetch(PDO::FETCH_ASSOC);
 			$titulo = $data['titulo'];
-      $ingredientes = $data['ingredientes'];
-      $modopreparo = $data['modopreparo'];
+			$ingredientes = $data['ingredientes'];
+			$modopreparo = $data['modopreparo'];
 			Banco::desconectar();
     }
 
@@ -94,9 +94,7 @@ $col = "100";
       <label class="control-label col-sm-2" for="nome">Título:</label>
       <div class="col-sm-10">
         <input type="text" maxlength="50" class="form-control" id="nome" placeholder="Insira o título..." name="titulo" required value="<?php echo !empty($titulo)?$titulo:'';?>" />
-<?php if (!empty($tituloErro)): ?>
-<?php echo $tituloErro; ?>
-<?php endif; ?>
+<?php if (!empty($tituloErro)): ?><?php echo $tituloErro; ?><?php endif; ?>
       </div>
     </div>
     <div class="form-group">
@@ -104,9 +102,7 @@ $col = "100";
       <label class="control-label col-sm-2" for="sbnm">Ingredientes:</label>
       <div class="col-sm-10">          
         <textarea id="sbnm" name="igrd" class="form-control" rows="<?php echo $lin; ?>" cols="<?php echo $col; ?>"><?php echo !empty($ingredientes)?$ingredientes:'';?></textarea>
-<?php if (!empty($ingredientesErro)): ?>
-<?php echo $ingredientesErro;?>
-<?php endif; ?>
+<?php if (!empty($ingredientesErro)): ?> <?php echo $ingredientesErro;?> <?php endif; ?>
       </div>
     </div>
     <div class="form-group">
@@ -114,12 +110,12 @@ $col = "100";
       <label class="control-label col-sm-2" for="apld">Modo de Preparo:</label>
       <div class="col-sm-10">          
         <textarea name="modopreparo" class="form-control" id="apld" rows="<?php echo $lin; ?>" cols="<?php echo $col; ?>"><?php echo !empty($modopreparo)?$modopreparo:'';?></textarea>
-<?php if (!empty($modopreparoErro)): ?>
-<?php echo $modopreparoErro;?>
-<?php endif; ?>
+<?php if (!empty($modopreparoErro)): ?> <?php echo $modopreparoErro;?> <?php endif; ?>
+
 <br/>
-<a href="index.php" class="btn btn-primary">Voltar</a>
-<button class="btn btn-success">Atualizar</button>
+
+		<a href="index.php" class="btn btn-primary">Voltar</a>
+		<button class="btn btn-success">Atualizar</button>
       </div>
     </div>
   </form>
