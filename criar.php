@@ -24,42 +24,45 @@ $col = "90";
 <body>
 
 <div class="jumbotron">
-  <h2 class="container"><img src="img/favicon.png" alt="Cupcake" class="favicon"> Cadastrar Receita</h2>
+	<h2 class="container">	
+		<img src="img/favicon.png" alt="Cupcake" class="favicon">&nbsp;Cadastrar Receita
+	</h2>
 </div>
+
 <div class="container">
-  <form class="form-horizontal" action="criar.php" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="nome">Título:</label>
-      <div class="col-sm-10">
-        <input name="titulo" id="nome" type="text" maxlength="50" class="form-control" placeholder="Insira o título..." required value="<?php echo !empty($titulo)?$titulo:'';?>" />
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="sbnm">Ingredientes:<br/><br/>*colocar ; para pular linha</label>
-      <div class="col-sm-10">          
-        <textarea name="igrd" id="sbnm" class="form-control" rows="<?php echo $lin; ?>" cols="<?php echo $col; ?>"><h2 class="text-center">SubTitle</h2>;</textarea>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="apld">Modo de Preparo:<br/><br/>*colocar ; para pular linha</label>
-      <div class="col-sm-10">          
-        <textarea name="modopreparo" id="apld" class="form-control" rows="<?php echo $lin; ?>" cols="<?php echo $col; ?>"><h2 class="text-center">SubTitle</h2>;</textarea>
-      </div>
-    </div>
-    <div class="form-group">
-    	<label class="control-label col-sm-2">Foto:</label>
-		<div class="col-sm-10">
-			<div class="btn btn-info">
-				<label for="foto">Arquivo</label>
+	<form class="form-horizontal" action="criar.php" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="nome">Título:</label>
+			<div class="col-sm-10">
+				<input name="titulo" id="nome" type="text" maxlength="50" class="form-control" placeholder="Insira o título..." required value="<?php echo !empty($titulo)?$titulo:'';?>" />
 			</div>
-			<input name="imgm" id="foto" type="file" />
 		</div>
-    </div>
-	<div class="form-group">
-		<a href="index.php" class="btn btn-primary">Voltar</a>
-		<button class="btn btn-success">Cadastrar</button>
-	</div>
-  </form>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="sbnm">Ingredientes:<br/><br/>*colocar ; para pular linha</label>
+			<div class="col-sm-10">          
+				<textarea name="igrd" id="sbnm" class="form-control" rows="<?php echo $lin; ?>" cols="<?php echo $col; ?>"><h2 class="text-center">Sub-titulo</h2>;</textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="apld">Modo de Preparo:<br/><br/>*colocar ; para pular linha</label>
+			<div class="col-sm-10">          
+				<textarea name="modopreparo" id="apld" class="form-control" rows="<?php echo $lin; ?>" cols="<?php echo $col; ?>"><h2 class="text-center">Sub-titulo</h2>;</textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2">Foto:</label>
+			<div class="col-sm-10">
+				<label for="foto">
+					<div class="btn btn-info">Arquivo</div>
+				</label>
+				<input name="imgm" id="foto" type="file" />
+			</div>
+		</div>
+		<div class="form-group">
+			<a href="index.php" class="btn btn-primary">Voltar</a>
+			<button class="btn btn-success">Cadastrar</button>
+		</div>
+	</form>
 </div>
 
 </body>
