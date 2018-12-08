@@ -18,16 +18,16 @@
 	text-decoration: none;
 	vertical-align: middle;
 	padding: 8px;
-	background-color: var(--corpadrao);
-	font-family: var(--fontepadrao);
-	font-size: var(--fonttamanho);
+	background-color: #3F5D7D;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
 	border-radius: 2px;
-	border: 1px solid var(--corpadrao);
+	border: 1px solid 3F5D7D;
 	cursor: default;
 }
 
 .botao:hover {
-	background-color: var(--hoverBtn);
+	background-color: #E5E5E5;
 }
 
 @media screen and (max-width: 500px) {
