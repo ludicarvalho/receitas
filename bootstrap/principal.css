@@ -18,10 +18,10 @@
 	text-decoration: none;
 	vertical-align: middle;
 	padding: 8px;
-    background-color: var(--corpadrao);
-    font-family: var(--fontepadrao);
-    font-size: var(--fonttamanho);
-    border-radius: 2px;
+	background-color: var(--corpadrao);
+	font-family: var(--fontepadrao);
+	font-size: var(--fonttamanho);
+	border-radius: 2px;
 	border: 1px solid var(--corpadrao);
 	cursor: default;
 }
