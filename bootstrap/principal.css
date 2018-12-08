@@ -1,0 +1,46 @@
+.excluir {
+	width: 500px;
+	background-color: #E5E5E5;
+	margin: 0px auto 0px auto;
+}
+
+.centro {
+	text-align: center;
+}
+
+.titulo {
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.botao {
+	color: white;
+	text-decoration: none;
+	vertical-align: middle;
+	padding: 8px;
+    background-color: var(--corpadrao);
+    font-family: var(--fontepadrao);
+    font-size: var(--fonttamanho);
+    border-radius: 2px;
+	border: 1px solid var(--corpadrao);
+	cursor: default;
+}
+
+.botao:hover {
+	background-color: var(--hoverBtn);
+}
+
+@media screen and (max-width: 500px) {
+
+	.excluir {
+		width: 100%;
+		display: block;
+		float: left;
+	}
+	
+	.botao {
+		padding: 4px;
+	}
+	
+}
+
