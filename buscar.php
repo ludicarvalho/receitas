@@ -98,7 +98,7 @@ else
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
 		<h1>
-            Receitas Juliane
+            Receitas Caseiras
             <br/>
             Buscando por: <?php echo ucwords($objeto); ?>
         </h1>
