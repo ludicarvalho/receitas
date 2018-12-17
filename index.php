@@ -194,6 +194,6 @@ rodape();
 <script>window.jQuery || document.write('<script src="bootstrap/jquery-slim.min.js"><\/script>')</script>
 <script src="bootstrap/popper.min.js"></script>
 <script src="bootstrap/bootstrap.min.js"></script>
-<script src="../../configs/css/tooltip.js"></script>
+<script src="bootstrap/tooltip.js"></script>
 </body>
 </html>
