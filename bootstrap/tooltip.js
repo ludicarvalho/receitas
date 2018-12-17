@@ -60,10 +60,10 @@ function TOOLTIP() {
 // Configuration
 //----------------------------------------------------------------------------------------------------
 	this.width = 150;							// width (pixels)
-	this.bgColor = "#E5E5E5";					// background color
+	this.bgColor = "#454545";					// background color
 	this.textFont = "Arial";					// text font family -- Comic Sans MS --
 	this.textSize = 10;							// text font size (pixels)
-	this.textColor = "#454545";					// text color
+	this.textColor = "white";					// text color
 	this.textAlign = "center";					// text alignment: "left", "right" or "center"
 	this.border = "1px solid lightgray";		// border (CSS spec: size style color, e.g. "1px solid #D00000")
 	this.padding = 2;							// padding (pixels)
