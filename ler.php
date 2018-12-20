@@ -31,18 +31,9 @@ else
 	<meta name="viewport" content="width=device-width, initial-scale=0.9">
 	<link rel="shortcut icon" href="img/favicon.png" />
 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap/estilo.css" />
 	<script src="bootstrap/jquery.js"></script>
 	<title>Receita - <?php echo ucwords($data['titulo']); ?></title>
-	<style>
-	.footer, h2 {
-		background-color: #F5F5F5;
-	}
-	@media screen and (max-width: 400px) {
-		div.ali {
-			text-align: right;
-		}
-	}
-	</style>
 </head>
 <body>
 
@@ -83,10 +74,9 @@ else
     <li class="list-group-item bg-dark">
       <h1 class="text-center text-white">Ingredientes</h1>
     </li>
-
     <li class="list-group-item">
 <?php
-echo str_replace(";", "\n</li>\n\n<li class='list-group-item'>", $data['ingredientes']);
+echo str_replace(";", "\n\t</li>\n\t<li class='list-group-item'>", $data['ingredientes']);
 ?>
 
     </li>
@@ -100,7 +90,7 @@ echo str_replace(";", "\n</li>\n\n<li class='list-group-item'>", $data['ingredie
     
     <li class="list-group-item">
 <?php
-echo str_replace(";", "\n</li>\n<li class='list-group-item'>", $data['modopreparo']);
+echo str_replace(";", "\n\t</li>\n\t<li class='list-group-item'>", $data['modopreparo']);
 ?>
 
     </li>
