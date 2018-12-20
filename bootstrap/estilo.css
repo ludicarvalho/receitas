@@ -28,5 +28,9 @@ margin: 8px 0px 0px 0px;
     .dropdown-menu a {
         text-align: right;
     }
+	
+	div.ali {
+		text-align: right;
+	}
 
 }
