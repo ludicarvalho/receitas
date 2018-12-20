@@ -86,12 +86,13 @@ $col = "100";
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap/estilo.css" />
 	<link rel="shortcut icon" href="img/favicon.png" />
 	<script src="bootstrap/jquery.min.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>
 	<title>Atualizar Receita</title>
 	<style>
-		.favicon {width: 30px;}
+		.favicon {width: 30px; vertical-align: middle;}
 		.oculto {display: none;}
 	</style>
 </head>
@@ -128,15 +129,15 @@ $col = "100";
 				<textarea name="modopreparo" class="form-control" id="apld" rows="<?php echo $lin; ?>" cols="<?php echo $col; ?>"><?php echo !empty($modopreparo)?$modopreparo:'';?></textarea>
 <?php if (!empty($modopreparoErro)): ?><?php echo $modopreparoErro;?><?php endif; ?>
 				<br/>
-				<a href="index.php" class="btn btn-primary">Voltar</a>
-				<button class="btn btn-success">Atualizar</button>
+				<a href="index.php" class="btn btn-secondary btao">Voltar</a>
+				<button class="btn btn-success btao">Atualizar</button>
 <?php if (file_exists($data['imagem'])) { ?>
-				<a href="apgimg.php?id=<?php echo $data['id']; ?>&pth=<?php echo $data['imagem']; ?>" class="btn btn-dark" target="_blank">Apagar imagem</a>
+				<a href="apgimg.php?id=<?php echo $data['id']; ?>&pth=<?php echo $data['imagem']; ?>" class="btn btn-danger btao" target="_blank">Apagar imagem</a>
 <?php }
 else {
 ?>
-				<label for="foto">
-					<div class="btn btn-info">Arquivo</div>
+				<label class="disp" for="foto">
+					<div class="btn btn-info btao">Arquivo</div>
 				</label>
 				<input name="imgm" id="foto" type="file" class="oculto" />
 <?php
@@ -146,6 +147,8 @@ else {
 		</div>
 	</form>
 </div>
+
+<?php rodape(); ?>
 
 </body>
 </html>
