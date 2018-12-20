@@ -6,6 +6,9 @@ margin: 8px 0px 0px 0px;
 .footer, h2 {
     background-color: #F5F5F5;
 }
+.oculto {
+	display: none;
+}
 @media screen and (max-width: 400px) {
     .card-body {
         text-align: right;
