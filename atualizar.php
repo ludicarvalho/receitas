@@ -93,7 +93,6 @@ $col = "100";
 	<title>Atualizar Receita</title>
 	<style>
 		.favicon {width: 30px; vertical-align: middle;}
-		.oculto {display: none;}
 	</style>
 </head>
 <body>
