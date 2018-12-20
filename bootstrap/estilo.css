@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.card {
+margin: 8px 0px 0px 0px;
+}
+.footer, h2 {
+    background-color: #F5F5F5;
+}
+@media screen and (max-width: 400px) {
+    .card-body {
+        text-align: right;
+    }
+    .navbar-toggler {
+        margin: 0px 0px 0px 250px;
+    }
+    .navbar {
+        text-align: right;
+    }
+    .disp {
+        display: block;
+    }
+    .btao {
+        display: block;
+        margin: 10px 0px 0px 0px;
+        position: relative;
+        width: 100%;
+    }
+    .dropdown-menu a {
+        text-align: right;
+    }
+
+}
