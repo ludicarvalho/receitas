@@ -36,25 +36,15 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/favicon.png" />
 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap/estilo.css" />
     <script src="bootstrap/jquery.js"></script>
     <style>
     	img {
     		width: <?php echo $tam; ?>rem;
     		height: <?php echo $alt; ?>rem;
-    	}
-		.card {
-		margin: 8px 0px 0px 0px;
-		}
-		.footer, h2 {
-			background-color: #F5F5F5;
-		}
-		@media screen and (max-width: 400px) {
-			.card-body {
-				text-align: right;
-			}
 		}
     </style>
-    <title>Receitas Caseiras</title>
+    <title>Receitas</title>
 </head>
 <body>
 
@@ -65,7 +55,7 @@ else
     	<span class="navbar-toggler-icon"></span>
     </button>
 		<div class="collapse navbar-collapse" id="me">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li>
 					<a class="navbar-brand" href="index.php">Início <span class="sr-only">(current)</span></a>
 				</li>
@@ -94,7 +84,7 @@ else
 <!--  Aqui começa a página -->
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
-		<h1>Receitas Caseiras</h1>
+		<h1>Receitas Caseira</h1>
 	</div>
 </div>
 
@@ -194,6 +184,6 @@ rodape();
 <script>window.jQuery || document.write('<script src="bootstrap/jquery-slim.min.js"><\/script>')</script>
 <script src="bootstrap/popper.min.js"></script>
 <script src="bootstrap/bootstrap.min.js"></script>
-<script src="bootstrap/tooltip.js"></script>
+<script src="../../configs/css/tooltip.js"></script>
 </body>
 </html>
