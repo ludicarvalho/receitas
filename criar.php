@@ -8,14 +8,12 @@ $col = "90";
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="img/favicon.png" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap/estilo.css" />
+	<script src="bootstrap/jquery-3.3.1.slim.min"></script>
+	<script src="bootstrap/bootstrap.min.js"></script>
 	<title>Cadastrar Receita</title>
 	<style>
-		input#foto {
-			display: none;
-		}
 		.favicon {
 			width: 30px;
 		}
@@ -50,17 +48,12 @@ $col = "90";
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2">Foto:</label>
-			<div class="col-sm-10">
-				<label for="foto">
-					<div class="btn btn-info">Arquivo</div>
-				</label>
-				<input name="imgm" id="foto" type="file" />
-			</div>
-		</div>
-		<div class="form-group">
-			<a href="index.php" class="btn btn-primary">Voltar</a>
-			<button class="btn btn-success">Cadastrar</button>
+			<input name="imgm" id="foto" class="oculto" type="file" />
+			<a href="index.php" class="btn btn-secondary btao">Voltar</a>
+			<label class="disp" for="foto">
+				<div class="btn btn-info btao">Foto</div>
+			</label>
+			<button class="btn btn-success btao">Cadastrar</button>
 		</div>
 	</form>
 </div>
@@ -75,30 +68,30 @@ if (!empty($_POST)) {
 	$modopreparo = trim($_POST['modopreparo']);
 
 	//Inserindo no Banco:
-  if(!empty($_FILES['imgm']['name'])) {
-    $arq = substr($_FILES['imgm']['name'], -4);
-    $inicionome = date('Ymd-His');
-    $pastafoto = "img/$inicionome";
-    $nomefoto = $pastafoto.$arq;
-    move_uploaded_file($_FILES['imgm']['tmp_name'], $nomefoto);
+	if(!empty($_FILES['imgm']['name'])) {
+		$arq = substr($_FILES['imgm']['name'], -4);
+		$inicionome = date('Ymd-His');
+		$pastafoto = "img/$inicionome";
+		$nomefoto = $pastafoto.$arq;
+		move_uploaded_file($_FILES['imgm']['tmp_name'], $nomefoto);
 
-	$pdo = Banco::conectar();
-	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "INSERT INTO receitas (titulo, ingredientes, modopreparo, imagem) VALUES (?,?,?,?)";
-	$q = $pdo->prepare($sql);
-	$q->execute(array($titulo, $ingredientes, $modopreparo, $nomefoto));
-	Banco::desconectar();
-	header("Location: index.php");
+		$pdo = Banco::conectar();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "INSERT INTO receitas (titulo, ingredientes, modopreparo, imagem) VALUES (?,?,?,?)";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($titulo, $ingredientes, $modopreparo, $nomefoto));
+		Banco::desconectar();
+		header("Location: index.php");
 	
-  }
-  else {
-    $pdo = Banco::conectar();
-	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "INSERT INTO receitas (titulo, ingredientes, modopreparo) VALUES (?,?,?)";
-	$q = $pdo->prepare($sql);
-	$q->execute(array($titulo, $ingredientes, $modopreparo));
-	Banco::desconectar();
-	header("Location: index.php");
-  }
+	}
+	else {
+		$pdo = Banco::conectar();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "INSERT INTO receitas (titulo, ingredientes, modopreparo) VALUES (?,?,?)";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($titulo, $ingredientes, $modopreparo));
+		Banco::desconectar();
+		header("Location: index.php");
+	}
 }
 ?>
