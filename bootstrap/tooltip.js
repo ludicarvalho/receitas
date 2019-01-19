@@ -54,6 +54,13 @@ var GK = (navigator.userAgent.indexOf('Gecko') != -1);
 var SA = (navigator.userAgent.indexOf('Safari') != -1);
 
 var tooltip = null;
+var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+if (w <= 400) {
+	var lado = "left";
+}
+else {
+	var lado = "right";
+}
 
 function TOOLTIP() {
 //----------------------------------------------------------------------------------------------------
@@ -69,7 +76,7 @@ function TOOLTIP() {
 	this.padding = 2;							// padding (pixels)
 	this.opacity = 95;							// opacity (1 - 100); not supported by all browsers
 	this.cursorDistance = 15;					// distance from mouse cursor (pixels)
-	this.xPos = "right";						// horizontal position: "left" or "right"
+	this.xPos = lado;						// horizontal position: "left" or "right"
 	this.yPos = "bottom";						// vertical position: "top" or "bottom"
 
 	// don't change
