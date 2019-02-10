@@ -83,7 +83,7 @@ else
 <main role="main">
 <!--  Aqui começa a página -->
 <div class="container">
-	<h1>Receitas Juliane</h1>
+	<h1>Receitas Caseiras</h1>
 </div>
 
 <div class="container">
