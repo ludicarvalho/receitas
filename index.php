@@ -1,8 +1,8 @@
 <?php
 include "banco.php";
 $pdo = Banco::conectar();
-$tam = "20"; // Tamanho da imagem e card na página
-$alt = "16"; // Altura da imagem
+$tam = "20.5"; // Tamanho da imagem e card na página
+$alt = "16.5"; // Altura da imagem
 
 //Somar a quantidade de itens
 $result_pg = "SELECT COUNT(id) AS num_result\n"
@@ -73,7 +73,7 @@ else
 				</li>
 			</ul>
 			<form class="form-inline mt-2 mt-md-0" method="post" action="buscar.php?pagina=1">
-				<input name="obj" class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+				<input class="form-control mr-sm-2" name="obj" type="text" placeholder="Buscar" aria-label="Search" required />
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 			</form>
 		</div>
@@ -82,10 +82,8 @@ else
 
 <main role="main">
 <!--  Aqui começa a página -->
-<div class="jumbotron jumbotron-fluid">
-	<div class="container">
-		<h1>Receitas Caseira</h1>
-	</div>
+<div class="container">
+	<h1>Receitas Juliane</h1>
 </div>
 
 <div class="container">
@@ -107,7 +105,7 @@ else
 				<img class="card-img-top" src="<?php echo $row['imagem']; ?>" alt="Imagem de <?php echo ucwords($row['titulo']); ?>" onmouseover="toolTip('<b><?php echo ucwords($row['titulo']); ?></b>')" onmouseout="toolTip()" />
 				<div class="card-body">
 					<h5 class="card-title"><b><?php echo ucwords($string); ?></b></h5>
-					<a href="ler.php?id=<?php echo $row['id']; ?>&pag=<?php echo $pagina; ?>" class="btn btn-secondary">Ver</a>
+					<a href="ler.php?id=<?php echo $row['id']; ?>&pag=<?php echo $pagina; ?>" class="btn btn-outline-secondary">Ver</a>
 				</div>
 			</div>
 		</div>
@@ -134,11 +132,15 @@ $max_links = 3;
 	<ul class="pagination justify-content-center">
 <?php if ($vari == 1 || empty($vari)) {
 ?>
-		<li class="page-item disabled"><a href="#" class="page-link">&laquo;</a></li>
+		<li class="page-item disabled">
+			<a href="#" class="page-link" title="Primeira página">&laquo;</a>
+		</li>
 <?php }
 		elseif ($vari <= $quantidade_pg and $vari >= 1) {
 ?>
-		<li class="page-item"><a class="page-link" href="index.php?pagina=1">&laquo;</a></li>
+		<li class="page-item">
+			<a class="page-link" href="index.php?pagina=1" title="Primeira página">&laquo;</a>
+		</li>
 <?php
 		}
 		elseif ($vari <= 0) {
@@ -146,23 +148,33 @@ $max_links = 3;
 		}
 		for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
 			if ($pag_ant >= 1) { ?>
-		<li class="page-item"><a class="page-link" href="index.php?pagina=<?php echo $pag_ant; ?>"><?php echo $pag_ant; ?></a></li>
+		<li class="page-item">
+			<a class="page-link" href="index.php?pagina=<?php echo $pag_ant; ?>" title="Página <?php echo $pag_ant; ?>"><?php echo $pag_ant; ?></a>
+		</li>
 <?php		}
 		}
 ?>
-		<li class="page-item disabled"><a href="#" class="page-link"><?php echo $pagina; ?></a></li>
+		<li class="page-item disabled">
+			<a href="#" class="page-link" title="<?php echo $pagina; ?>"><?php echo $pagina; ?></a>
+		</li>
 <?php 
 		for ($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++) {
 			if ($pag_dep <= $quantidade_pg) { ?>
-		<li class="page-item"><a class="page-link" href="index.php?pagina=<?php echo $pag_dep; ?>"><?php echo $pag_dep; ?></a></li>
+		<li class="page-item">
+			<a class="page-link" href="index.php?pagina=<?php echo $pag_dep; ?>" title="Página <?php echo $pag_dep; ?>"><?php echo $pag_dep; ?></a>
+		</li>
 <?php 		}
 		}
 if ($vari == $quantidade_pg) { ?>
-		<li class="page-item disabled"><a href="#" class="page-link">&raquo;</a></li>
+		<li class="page-item disabled">
+			<a href="#" class="page-link" title="Última página">&raquo;</a>
+		</li>
 <?php }
 
 elseif ($vari != $quantidade_pg and $vari <= $quantidade_pg) { ?>
-		<li class="page-item"><a href="index.php?pagina=<?php echo $quantidade_pg; ?>" class="page-link">&raquo;</a></li>
+		<li class="page-item">
+			<a href="index.php?pagina=<?php echo $quantidade_pg; ?>" class="page-link" title="Última página">&raquo;</a>
+		</li>
 <?php }
 else {
 header("Location: index.php?pagina=$quantidade_pg");
@@ -180,10 +192,8 @@ rodape();
 ?>
 
 </main>
-<script src="bootstrap/jquery-3.3.1.slim.min.js"></script>
-<script>window.jQuery || document.write('<script src="bootstrap/jquery-slim.min.js"><\/script>')</script>
-<script src="bootstrap/popper.min.js"></script>
-<script src="bootstrap/bootstrap.min.js"></script>
-<script src="../../configs/css/tooltip.js"></script>
+
+<?php include "bootstrap/scripts.html"; ?>
+
 </body>
 </html>
