@@ -102,7 +102,13 @@ else
 
 		<div class="col-md-4"> <!-- Receita <?php echo $row['id']; ?> -->
 			<div class="card" style="width: <?php echo $tam; ?>rem;">
-				<img class="card-img-top" src="<?php echo $row['imagem']; ?>" alt="Imagem de <?php echo ucwords($row['titulo']); ?>" onmouseover="toolTip('<b><?php echo ucwords($row['titulo']); ?></b>')" onmouseout="toolTip()" />
+				<img
+					class="card-img-top"
+					src="<?php echo $row['imagem']; ?>"
+					alt="Imagem de <?php echo ucwords($row['titulo']); ?>"
+					onmouseover="toolTip('<b><?php echo ucwords($row['titulo']); ?></b>')"
+					onmouseout="toolTip()"
+				/>
 				<div class="card-body">
 					<h5 class="card-title"><b><?php echo ucwords($string); ?></b></h5>
 					<a href="ler.php?id=<?php echo $row['id']; ?>&pag=<?php echo $pagina; ?>" class="btn btn-outline-secondary">Ver</a>
